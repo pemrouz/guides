@@ -1,0 +1,105 @@
+.guides {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #EEE;
+	font-family: Tahoma;
+	font-size: 11px;
+	text-align: center;
+
+	* { box-sizing: border-box; }
+
+	.horizontal, .vertical { 
+		position: absolute;
+		background: red;
+		box-shadow: 0 0 10px 0 red; }
+	.horizontal {
+		left: 0 !important;
+		width: 100%;
+		height: 1px; }
+	.vertical {
+		top: 0 !important;
+		height: 100%;
+		width: 1px; }
+
+	.link {
+		position: absolute;
+		background: green;
+		width: 100%;
+		height: 100%; 
+		box-shadow: 0 0 10px 0 green; }
+	.link-vertical {
+		right: 100px;
+		width: 1px !important;
+		left: auto !important; }
+	.link-horizontal {
+		top: 100px !important;
+		height: 1px !important; }
+
+		.link-horizontal::after,
+		.link-horizontal::before,
+		.link-vertical::after,
+		.link-vertical::before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 0px;
+			height: 0px;
+			border: 5px solid transparent; }
+		.link-vertical::before {
+			left: -5px;
+			top: -5px;
+			border-bottom-color: green; }
+		.link-vertical::after {
+			left: -5px;
+			bottom: -5px;
+			border-top-color: green; }
+		.link-horizontal::before {
+			left: -5px;
+			top: -5px;
+			border-right-color: green; }
+		.link-horizontal::after {
+			right: -5px;
+			top: -5px;
+			border-left-color: green; }
+
+		.value {
+			position: absolute;
+			display: block;
+			min-width: 20px;
+			min-height: 20px;
+			padding: 0 5px;
+			background: black;
+			border-radius: 15px;
+			line-height: 20px; }
+
+		.vertical .value, .link-vertical .value {
+			left: 5px;
+			top: 50%; }
+
+		.horizontal .value, .link-horizontal .value {
+			left: 50%;
+			top: 5px; }
+
+			.value::before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 0px;
+				height: 0px;
+				border: 5px solid transparent; }		
+
+			.vertical .value::before, .link-vertical .value::before {
+				left: -8px;
+				top: 50%;
+				margin-top: -5px;
+				border-right-color: black; }
+
+			.horizontal .value::before, .link-horizontal .value::before {
+				left: 50%;
+				top: -8px;
+				margin-left: -5px;
+				border-bottom-color: black; }
+}
