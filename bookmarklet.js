@@ -1,0 +1,1 @@
+javascript:if (guides) { guides.toggle() } else {var s = document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='file:///C:/Users/King/Documents/Guides/guides.js';var j = document.createElement('script');j.type='text/javascript';document.body.appendChild(j);j.src='file:///C:/Users/King/Documents/Guides/jquery.js';}void(0);
