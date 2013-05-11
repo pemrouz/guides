@@ -21,6 +21,12 @@
         guides.$dom.toggleClass('hide')
     }   
 
+    guides.update = function() {
+        $('.guides .vertical, .guides .horizontal')
+            .height($('html').height())
+            .width($('width').width())
+    }   
+
     guides.listen = function(){
         $(document).on('mouseup', function(){
             $('.following').removeClass('following')
@@ -30,8 +36,9 @@
             $('.following').offset({ top: e.pageY, left: e.pageX })
         })
 
+        $(window).resize(guides.update)
+
         $(document).on('keyup', function(e){
-            console.log(e.which)
             if (link) guides.link(e.which)
             switch (e.which) {
                 case 67: guides.clear();           break;  // C
@@ -60,6 +67,7 @@
             .attr('data-index', ++count)
             .append($('<div class="value">').text(count))
             .appendTo(guides.$dom)
+        guides.update()
     }
 
     guides.link = function(value){
