@@ -10,7 +10,7 @@
     guides.init = function() {
         if (typeof $ == 'undefined') return setTimeout(guides.init, 100)
         $('head')
-            .append('<link rel="stylesheet/less" type="text/css" href="styles.less" />')
+            .append('<link rel="stylesheet/less" type="text/css" href="https://raw.github.com/Emrouz/guides/master/styles.less" />')
             .append('<script type="text/javascript" src="https://raw.github.com/Emrouz/guides/master/less.js"></script>')
 
         guides.$dom = $('<div class="guides">').prependTo('html')
